@@ -28,6 +28,7 @@
     </div>
     
   </div>
+
   <div class="banner">
     <div class="mask"></div>
   </div>
@@ -80,22 +81,89 @@
         </a>
       </footer>
     </div>
+    <p class="downloadResume-wraper">
+      <a href="./resume.pdf" class="downloadResume" target="_blank" download>
+        DOWNLOAD RESUME
+      </a>
+    </p>
   </main>
-  <pre>
-    1
-    1
-    1
-    1
-    1
-    1
-    1
-    1
-    1
-    1
-    1
 
-  </pre>
+  <p class="introduction">
+    我是qikke,巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉
+  </p>
 
- 
+  <section class="skills">
+    <h1>技能</h1>
+  
+    <ol class="clearfix">
+      <li> 
+        <h3>WordPress </h3> 
+        <div class="progressBar">
+          <div class="progress"></div>
+        </div>
+      </li>
+      <li>
+        <h3>HTML & CSS</h3> 
+        <div class="progressBar">
+          <div class="progress"  style="width: 80%;"></div>
+        </div>
+      </li>
+      <li>
+        <h3>JavaScript</h3> 
+        <div class="progressBar">
+          <div class="progress" style="width: 40%;"></div>
+        </div>
+      </li>
+      <li>
+        <h3>PHP & MySQL </h3> 
+        <div class="progressBar">
+          <div class="progress" style="width: 75%;"></div>
+        </div>
+      </li>
+      <li>
+        <h3>Drupal </h3> 
+        <div class="progressBar">
+          <div class="progress" style="width: 65%;"></div>
+        </div>
+      </li>
+      <li>
+        <h3>Photoshop </h3> 
+        <div class="progressBar">
+          <div class="progress" style="width: 90%;"></div>
+        </div>    
+      </li>
+    </ul>  
+  </section>
+
+  <section class="portfolio">
+    <h1>作品</h1>
+    <nav>
+      <ol class="clearfix">
+        <li id="portfolioAll">ALL</li>
+        <li id="portfolioHtml">HTML&&CSS</li>
+        <li id="portfolioJs">JavaScript</li>
+      </ol>
+      <div id="portfolioState" class="bar state-1">
+        <div class="inner-bar"></div>
+      </div>
+    </nav>
+    <div class="work">
+      <div class="img1"><img src="./img/photo-1422480041422-130238c67fe2-1-2-2-1-1-607x576.jpg" alt=""></div>
+      <div class="img2"><img src="./img/photo-1421757295538-9c80958e75b0-2-2-1-1-294x278.jpg" alt=""></div>
+      <div class="img3"><img src="./img/kaboompics-1-2-1-1-294x278.jpg" alt=""></div>
+    </div>
+  </section>
+
+  <script>
+    portfolioAll.onclick = function() {
+      portfolioState.className = "bar state-1"
+    }
+    portfolioHtml.onclick = function() {
+      portfolioState.className = "bar state-2"
+    }
+    portfolioJs.onclick = function() {
+      portfolioState.className = "bar state-3"
+    }
+  </script> 
 </body>
 </html>
