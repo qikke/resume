@@ -3,7 +3,7 @@ window.onload = function () {
 
   //先让第一个模块上浮
   testBorderActive()
-  
+
   function testBorderActive() {
     //导航栏的高亮变化
     //先拿到所有section
@@ -17,9 +17,9 @@ window.onload = function () {
 
     let subMenu = document.querySelectorAll('.nav>ul>li')
     for (let i = 0; i < subMenu.length; i++) {
-      subMenu[i].classList.remove('borderActive')
+      subMenu[i].classList.remove('highLight')
     }
-    subMenu[minIndex].classList.add('borderActive')
+    subMenu[minIndex].classList.add('highLight')
     specialTags[minIndex].classList.add("offset")
   }
 
@@ -47,15 +47,15 @@ window.onload = function () {
   var lis = document.getElementById("nav").getElementsByTagName("li")
   for (var i = 0; i < lis.length; i++) {
     lis[i].onmouseover = function (event) {
+      for (let i = 0; i < lis.length; i++) {
+        lis[i].classList.remove('highLight')
+      }
       let li = event.currentTarget
-      li.classList.add('borderActive')
-      li.classList.add('subActive')
+      li.classList.add('active')
     }
     lis[i].onmouseout = function (event) {
       let li = event.currentTarget
-      li.classList.remove('subActive')
-      li.classList.remove('borderActive')
-      testBorderActive()
+      li.classList.remove('active')
     }
   }
 
