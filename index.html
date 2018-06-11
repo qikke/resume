@@ -1,44 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>resume</title>
+  <style>
+    .site-loading {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      z-index: 1;
+      display: none;
+    }
+
+    .site-loading.active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loading {
+      width: 300px;
+      height: 300px;
+      position: relative;
+    }
+
+    .loading::before,
+    .loading::after {
+      content: '';
+      display: block;
+      width: 0px;
+      height: 0px;
+      background: gray;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      animation: load 1.4s linear infinite;
+    }
+
+    .loading::after {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes load {
+      from {
+        width: 0x;
+        height: 0px;
+        opacity: 1;
+      }
+      to {
+        width: 90px;
+        height: 90px;
+        opacity: 0;
+      }
+    }
+  </style>
   <link rel="stylesheet" href="./style.css">
   <script src="//at.alicdn.com/t/font_667726_tv6wstrtn44mquxr.js"></script>
 </head>
+
 <body>
+  <div class="site-loading active" id="siteWelcome">
+    <div class="loading"></div>
+  </div>
   <div class="topNavBar clearfix">
-    <div class="topNavBar-inner">
+    <div class="topNavBar-inner" id="topNavBar">
       <a href="#" class="logo">
-      <span class="rs">RS</span><span class="card">card</span>
-      <nav class="nav">
+        <span class="rs">RS</span>
+        <span class="card">card</span>
+      </a>
+      <nav class="nav" id="nav">
         <ul class="clearfix">
-          <li><a href="#">关于</a></li>
-          <li><a href="#">技能</a></li>
-          <li><a href="#">作品</a></li>
-          <li><a href="#">博客</a></li>
-          <li><a href="#">日历</a></li>
-          <li><a href="#">联系方式</a></li>
-          <li><a href="#">其他</a></li>
+          <li>
+            <a href="#about">关于</a>
+          </li>
+          <li class="hasSubMenu">
+            <a href="#siteSkills">技能</a>
+            <ul class="submenu">
+              <li>技能1</li>
+              <li>技能2</li>
+              <li>技能3</li>
+            </ul>
+          </li>
+          <li class="hasSubMenu">
+            <a href="#works">作品</a>
+            <ul class="submenu">
+              <li>作品1</li>
+              <li>作品2</li>
+              <li>作品3</li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">博客</a>
+          </li>
+          <li>
+            <a href="#">日历</a>
+          </li>
+          <li>
+            <a href="#">联系方式</a>
+          </li>
+          <li class="hasSubMenu">
+            <a href="#">其他</a>
+            <ul class="submenu">
+              <li>其他1</li>
+              <li>其他2</li>
+              <li>其他3</li>
+            </ul>
+          </li>
         </ul>
       </nav>
-    </a>
     </div>
-    
   </div>
 
   <div class="banner">
     <div class="mask"></div>
   </div>
-  
-  <main>
+
+  <main id="about">
     <div class="userCard">
       <div class="pictureAndText clearfix">
         <div class="picture"></div>
         <div class="text">
-          <span class="welcome">HELLO<span class="triangle"></span></span>
+          <span class="welcome">HELLO
+            <span class="triangle"></span>
+          </span>
           <h1>qikke</h1>
           <p>前端开发工程师</p>
           <hr>
@@ -57,26 +151,27 @@
       <footer class="media">
         <a href="#">
           <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-github"></use>
+            <use xlink:href="#icon-github"></use>
           </svg>
         </a>
         <a href="#">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-weibo"></use>
-          </svg></a>
-        <a href="#">
-          <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-zhihu0"></use>
           </svg>
         </a>
         <a href="#">
           <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-weixin"></use>
+            <use xlink:href="#icon-zhihu0"></use>
           </svg>
         </a>
         <a href="#">
           <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-twitter"></use>
+            <use xlink:href="#icon-weixin"></use>
+          </svg>
+        </a>
+        <a href="#">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-twitter"></use>
           </svg>
         </a>
       </footer>
@@ -92,50 +187,50 @@
     我是qikke,巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉
   </p>
 
-  <section class="skills">
+  <section class="skills" id="siteSkills">
     <h1>技能</h1>
-  
+
     <ol class="clearfix">
-      <li> 
-        <h3>WordPress </h3> 
+      <li>
+        <h3>WordPress </h3>
         <div class="progressBar">
           <div class="progress"></div>
         </div>
       </li>
       <li>
-        <h3>HTML & CSS</h3> 
+        <h3>HTML & CSS</h3>
         <div class="progressBar">
-          <div class="progress"  style="width: 80%;"></div>
+          <div class="progress" style="width: 80%;"></div>
         </div>
       </li>
       <li>
-        <h3>JavaScript</h3> 
+        <h3>JavaScript</h3>
         <div class="progressBar">
           <div class="progress" style="width: 40%;"></div>
         </div>
       </li>
       <li>
-        <h3>PHP & MySQL </h3> 
+        <h3>PHP & MySQL </h3>
         <div class="progressBar">
           <div class="progress" style="width: 75%;"></div>
         </div>
       </li>
       <li>
-        <h3>Drupal </h3> 
+        <h3>Drupal </h3>
         <div class="progressBar">
           <div class="progress" style="width: 65%;"></div>
         </div>
       </li>
       <li>
-        <h3>Photoshop </h3> 
+        <h3>Photoshop </h3>
         <div class="progressBar">
           <div class="progress" style="width: 90%;"></div>
-        </div>    
+        </div>
       </li>
-    </ul>  
+      </ul>
   </section>
 
-  <section class="portfolio">
+  <section class="portfolio" id="works">
     <h1>作品</h1>
     <nav>
       <ol class="clearfix">
@@ -148,22 +243,19 @@
       </div>
     </nav>
     <div class="work">
-      <div class="img1"><img src="./img/photo-1422480041422-130238c67fe2-1-2-2-1-1-607x576.jpg" alt=""></div>
-      <div class="img2"><img src="./img/photo-1421757295538-9c80958e75b0-2-2-1-1-294x278.jpg" alt=""></div>
-      <div class="img3"><img src="./img/kaboompics-1-2-1-1-294x278.jpg" alt=""></div>
+      <div class="img1">
+        <img src="./img/photo-1422480041422-130238c67fe2-1-2-2-1-1-607x576.jpg" alt="">
+      </div>
+      <div class="img2">
+        <img src="./img/photo-1421757295538-9c80958e75b0-2-2-1-1-294x278.jpg" alt="">
+      </div>
+      <div class="img3">
+        <img src="./img/kaboompics-1-2-1-1-294x278.jpg" alt="">
+      </div>
     </div>
   </section>
 
-  <script>
-    portfolioAll.onclick = function() {
-      portfolioState.className = "bar state-1"
-    }
-    portfolioHtml.onclick = function() {
-      portfolioState.className = "bar state-2"
-    }
-    portfolioJs.onclick = function() {
-      portfolioState.className = "bar state-3"
-    }
-  </script> 
+  <script src="./main.js"></script>
 </body>
+
 </html>
