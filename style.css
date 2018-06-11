@@ -35,6 +35,15 @@ h6 {
   font-weight: normal;
 }
 
+[data-x] {
+  transform: translateY(350px);
+}
+
+[data-x].offset {
+  transform: translate(0);
+  transition: all 0.3s;
+}
+
 .icon {
   width: 1em;
   height: 1em;
@@ -111,33 +120,35 @@ h6 {
   display: none;
 }
 
-.nav>ul>li.hasSubMenu.active>.submenu {
+.nav>ul>li.hasSubMenu.subActive>.submenu {
   display: block;
   position: absolute;
   top: 120%;
   right: 0;
   background: white;
   color: black;
-  font-size: 15px;
+  font-size: 13px;
   border-radius: 2px;
-  box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.75);
   animation: s 0.3s;
 }
-.nav>ul>li.hasSubMenu.active>.submenu>li{
+
+.nav>ul>li.hasSubMenu.subActive>.submenu>li {
   padding: 10px 20px;
 }
-@keyframes s{
-  from{
-    margin-right:100%; 
+
+@keyframes s {
+  from {
+    margin-right: 100%;
   }
-  to{
+  to {
     margin-right: 0;
   }
 }
 
 .nav>ul>li>a {
   color: inherit;
-  font-size: 15px;
+  font-size: 13px;
   border-bottom: solid transparent 3px;
   padding: 3px;
   font-weight: bold;
@@ -145,7 +156,7 @@ h6 {
   position: relative;
 }
 
-.nav>ul>li.active::after {
+.nav>ul>li.borderActive::after {
   content: '';
   display: block;
   position: absolute;
@@ -343,12 +354,19 @@ section.skills>ol>li:nth-child(even) {
 section.skills>ol>li>.progressBar {
   height: 5px;
   background: #FAE1E1;
+  overflow: hidden;
 }
 
-section.skills>ol>li>.progressBar>.progress {
+section.skills .progressBar>.progress {
   background: #E8676B;
   height: 100%;
   width: 60%;
+  transform: translate(-100%);
+  transition: all 0.5s;
+}
+
+section.skills.offset .progressBar>.progress {
+  transform: translate(0);
 }
 
 section.portfolio {

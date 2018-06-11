@@ -14,7 +14,7 @@
       width: 100%;
       height: 100%;
       background: white;
-      z-index: 1;
+      z-index: 10;
       display: none;
     }
 
@@ -80,7 +80,7 @@
       </a>
       <nav class="nav" id="nav">
         <ul class="clearfix">
-          <li>
+          <li class="borderActive">
             <a href="#about">关于</a>
           </li>
           <li class="hasSubMenu">
@@ -125,7 +125,7 @@
     <div class="mask"></div>
   </div>
 
-  <main id="about">
+  <main id="about" data-x>
     <div class="userCard">
       <div class="pictureAndText clearfix">
         <div class="picture"></div>
@@ -187,7 +187,7 @@
     我是qikke,巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉巴拉巴拉拉巴拉
   </p>
 
-  <section class="skills" id="siteSkills">
+  <section class="skills" id="siteSkills" data-x>
     <h1>技能</h1>
 
     <ol class="clearfix">
@@ -230,7 +230,7 @@
       </ul>
   </section>
 
-  <section class="portfolio" id="works">
+  <section class="portfolio" id="works" data-x>
     <h1>作品</h1>
     <nav>
       <ol class="clearfix">
@@ -254,7 +254,7 @@
       </div>
     </div>
   </section>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
   <script src="./main.js"></script>
 </body>
 
