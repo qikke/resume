@@ -26,7 +26,6 @@
       })
     },
     bindEvents: function () {
-      console.log(this)
       this.view.onload = () => {
         //移除加载页面
         siteWelcome.classList.remove('active')
