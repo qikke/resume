@@ -1,26 +1,5 @@
 ! function () {
-  var model = {
-    init: function () {
-      var APP_ID = '3nMDIPYnts7SsgtpgLk8GL42-gzGzoHsz'
-      var APP_KEY = 'JXKFqoNFmiHAHQ5m79B5rqfM'
-      AV.init({
-        appId: APP_ID,
-        appKey: APP_KEY
-      })
-    },
-    fetch: function () {
-      var query = new AV.Query('Message');
-      return query.find() //return一个promise对象
-    },
-    save: function (name, inputValue) {
-      let messageAV = AV.Object.extend('Message')
-      let message = new messageAV()
-      return message.save({
-        name: name,
-        message: inputValue
-      })
-    }
-  }
+  var model = Model({resourseName:'Message'})
   var view = document.querySelector('#postMessage')
   var controller = {
     model: null,
@@ -44,7 +23,7 @@
       let _this = this
       var inputValue = this.view.querySelector('input[name=content]').value
       var name = this.view.querySelector('input[name=name]').value
-      this.model.save(name, inputValue).then(function (object) {
+      this.model.save({name:name,message:inputValue}).then(function (object) {
         //局部刷新
         _this.addLi(object.attributes.name, object.attributes.message)
       })
