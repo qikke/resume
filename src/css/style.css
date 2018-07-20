@@ -1,0 +1,525 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  background: #EFEFEF;
+}
+
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+hr {
+  height: 0;
+  border: none;
+  border-top: 1px solid #DEDEDE;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+/* 
+[data-x] {
+  transform: translateY(350px);
+} */
+
+/* [data-x].offset {
+  transform: translate(0);
+  transition: all 0.3s;
+} */
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.topNavBar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.topNavBar-inner.sticky {
+  background: white;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: black;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.topNavBar-inner {
+  height: 65px;
+  padding: 10px 16px;
+  transition: all 1s;
+  color: #B7B7B7;
+}
+
+.logo {
+  float: left;
+  font-family: "Arial Black";
+  font-size: 24px;
+  padding-top: 3px;
+  padding-bottom: 4px;
+  margin-top: 15px;
+}
+
+.rs {
+  color: white;
+  margin-right: 4px;
+}
+
+.topNavBar-inner.sticky .rs {
+  transition: all 1s;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.card {
+  color: #9A9DA2;
+}
+
+.nav {
+  float: right;
+}
+
+.nav>ul {
+  padding-top: 15px;
+  padding-bottom: 9px;
+}
+
+.nav>ul>li {
+  float: left;
+  margin-left: 46px;
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav>ul>li.hasSubMenu>.submenu {
+  display: none;
+}
+
+.nav>ul>li.hasSubMenu.active>.submenu {
+  display: block;
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: white;
+  color: black;
+  font-size: 13px;
+  border-radius: 2px;
+  box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.75);
+  animation: s 0.3s;
+}
+
+.nav>ul>li.hasSubMenu.active>.submenu>li {
+  padding: 10px 20px;
+}
+
+@keyframes s {
+  from {
+    margin-right: 100%;
+  }
+  to {
+    margin-right: 0;
+  }
+}
+
+.nav>ul>li>a {
+  font-size: 13px;
+  border-bottom: solid transparent 3px;
+  padding: 3px;
+  font-weight: bold;
+  padding-bottom: 8px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+  transition: all .6s;
+}
+.topNavBar-inner.sticky li>a{
+  color: #555;
+}
+.nav>ul>li>a:after {
+  display: block;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '.';
+  color: transparent;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background: transparent;
+  transition: all .6s;
+}
+
+.topNavBar-inner.sticky .nav>ul>li>a:hover:after {
+  animation: circle 1.5s ease-in forwards;
+}
+
+.topNavBar-inner.sticky .nav>ul>li.highLight>a:after {
+  animation: circle 1.5s ease-in forwards;
+}
+
+@keyframes circle {
+  0% {
+    width: 1px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 1px;
+    z-index: -1;
+    background: #eee;
+    border-radius: 100%;
+  }
+  100% {
+    background: #aaa;
+    height: 5000%;
+    width: 5000%;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0;
+  }
+}
+
+/* .nav>ul>li.active::after,
+.nav>ul>li.highLight::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  height: 3px;
+  width: 100%;
+  background: #E06567;
+  animation: navBorder 0.2s;
+} */
+
+/* @keyframes navBorder {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+} */
+
+.banner {
+  background: url("../img/wallhaven-75324.png");
+  background-position: center center;
+  background-size: cover;
+  height: 515px;
+}
+
+.banner .mask {
+  height: 515px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.userCard {
+  max-width: 930px;
+  background-color: #FFFFFF;
+  padding-top: 60px;
+  margin: -350px auto 0 auto;
+  box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
+}
+
+.userCard .picture {
+  height: 343px;
+  width: 300px;
+  background-image: url("../img/main.jpg");
+  background-position: center center;
+  background-size: cover;
+  float: left;
+  margin-left: 50px;
+  margin-bottom: 55px;
+}
+
+.userCard .text {
+  float: left;
+  padding-left: 80px;
+}
+
+.userCard .text .welcome {
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+  background-color: #E8676B;
+  padding: 5.5px 12px;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.userCard .text .welcome .triangle {
+  width: 0px;
+  height: 0px;
+  border: 8px solid transparent;
+  border-left-color: #E8676B;
+  border-top-width: 0;
+  position: absolute;
+  left: 4px;
+  top: 100%;
+}
+
+.userCard .text dl dt,
+.userCard .text dl dd {
+  float: left;
+  padding-bottom: 16px;
+  font-size: 14px;
+}
+
+.userCard .text dl {
+  padding-top: 20px;
+}
+
+.userCard .text dl dt {
+  width: 30%;
+  font-weight: bold;
+}
+
+.userCard .text dl dd {
+  width: 70%;
+  color: #A0A3A9;
+}
+
+.userCard .text h1 {
+  padding-top: 35px;
+}
+
+.userCard .text p {
+  padding-bottom: 20px;
+}
+
+.userCard>footer.media {
+  background: #4d4848;
+  text-align: center;
+}
+
+.userCard>footer.media>a {
+  display: inline-block;
+  vertical-align: top;
+  width: 40px;
+  line-height: 30px;
+  padding: 5px 0;
+  border-radius: 50%;
+  margin: 16px;
+  transition: all 0.3s;
+}
+
+.userCard>footer.media>a:hover {
+  background: #CF505F;
+}
+
+.userCard svg {
+  height: 30px;
+  width: 30px;
+  fill: white;
+  vertical-align: top;
+}
+
+main>.downloadResume-wraper {
+  text-align: center;
+  margin-top: 43px;
+}
+
+main>.downloadResume-wraper>.downloadResume {
+  color: #3D4451;
+  display: inline-block;
+  vertical-align: top;
+  padding: 22px 50px;
+  border: 1px solid #CBCDCF;
+  font-weight: bold;
+  transition: box-shadow 0.3s;
+  border-radius: 4px;
+}
+
+main>.downloadResume-wraper>.downloadResume:hover {
+  box-shadow: 0px 11px 46px -14px rgba(0, 0, 0, 0.58);
+}
+
+body>.introduction {
+  max-width: 930px;
+  margin: 43px auto 0 auto;
+  font-family: kai;
+  font-size: 20px;
+  color: #6A6A6A;
+  text-align: center;
+  line-height: 1.8;
+}
+
+section.skills {
+  max-width: 930px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+section.message>h1,
+section.skills>h1,
+section.portfolio>h1 {
+  font-weight: bold;
+  text-align: center;
+}
+
+section.skills>ol {
+  margin-top: 40px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
+  padding: 35px 65px;
+  font-size: 14px;
+}
+
+section.skills>ol>li {
+  float: left;
+  width: 47%;
+  margin-bottom: 33px;
+}
+
+section.skills>ol>li:nth-child(even) {
+  float: right;
+}
+
+section.skills>ol>li>.progressBar {
+  height: 5px;
+  background: #FAE1E1;
+  overflow: hidden;
+}
+
+section.skills .progressBar>.progress {
+  background: #E8676B;
+  height: 100%;
+  width: 60%;
+  transform: translate(-100%);
+  transition: all 0.5s;
+}
+
+section.skills.offset .progressBar>.progress {
+  transform: translate(0);
+}
+
+section.portfolio {
+  margin-top: 60px;
+  text-align: center;
+}
+
+section.portfolio>nav {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 25px;
+}
+
+section.portfolio>nav>ol>li {
+  float: left;
+  cursor: pointer;
+}
+
+section.portfolio>nav>ol>li:nth-child(2) {
+  margin: 0 43px;
+}
+
+section.portfolio>nav>.bar {
+  margin-top: 15px;
+  background: #fff;
+  height: 5px;
+}
+
+section.portfolio>nav>.bar>.inner-bar {
+  background: #E8676B;
+  transition: all 0.5s;
+  height: 100%;
+  border-radius: 3px;
+}
+
+section.portfolio>nav .state-1 .inner-bar {
+  width: 10%;
+}
+
+section.portfolio>nav .state-2 .inner-bar {
+  width: 35%;
+  margin-left: 71px;
+}
+
+section.portfolio>nav .state-3 .inner-bar {
+  width: 27%;
+  margin-left: 215px;
+}
+
+section.portfolio>.work {
+  max-width: 930px;
+  margin: 37px auto 750px auto;
+  position: relative;
+}
+
+section.portfolio>.work>.img1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+section.portfolio>.work>.img2 {
+  position: absolute;
+  left: 636px;
+  top: 0;
+}
+
+section.portfolio>.work>.img3 {
+  position: absolute;
+  left: 636px;
+  top: 298px;
+}
+
+section.message {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+section.message>ol {
+  margin-top: 30px;
+}
+
+section.message>ol>li {
+  padding: 18px;
+  border: 1px solid #DDD;
+}
